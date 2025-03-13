@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+.container {
+    width: 100%;
+    margin-inline: auto;
+}
+
+body {
+    font-family: "Open Sans", "Lato", Arial, sans-serif;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.end {
+    justify-content: flex-end;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+section {
+    height: 100svh;
+    display: grid;
+    place-content: center;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 600px;
+}
+
+.add-notes {
+    margin-top: 8px;
+    padding: 14px;
+    width: 100%;
+    background-color: #268CF2;
+    color: white;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #074686;
+        transition: background-color 0.25s ease-in-out;
+    }
+}
+
+.left-side {
+    width: calc(25% - 20px);
+    background: #074686;
+    color: #fff;
+    padding: 24px;
+
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .notes-number {
+        text-align: center;
+        margin-top: 4px;
+        font-weight: 400;
+        padding-inline: 24px;
+    }
+
+    figure {
+        width: 150px;
+        height: auto;
+    }
+}
+
+.middle-side {
+    width: calc(30% - 20px);
+    border-right: 1px solid #dadada;
+}
+
+form {
+    width: calc(60% - 20px);
+}
+
+.middle-side, form {
+    padding: 24px;
+}
+
+.title {
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 600;
+}
+
+div > ul:first-of-type {
+    margin-top: 16px;
+}
+
+.first-note {
+    border-bottom: 1px solid #dadada;
+    padding: 12px;
+    position: relative;
+
+    li + li {
+        margin-top: 4px;
+    }
+
+    .note-title, .note-description {
+        text-align: left;
+    }
+
+    .note-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .note-description {
+        font-size: 1.4rem;
+        color: #434343;
+    }
+
+    .note-time {
+        text-align: right;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: #434343;
+        margin-top: 8px;
+    }
+
+    i {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        font-size: 1.5rem;
+        color: #494242;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            color: #5e0606;
+            transition: color 0.25s ease-in-out;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        i {
+            opacity: 1;
+        }
+    }
+}
+
+textarea {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.focused-note {
+    background-color: #f3f3f3;
+
+    .note-title {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    .note-description {
+        font-weight: 500;
+    }
+
+    .note-time {
+    font-weight: 500;
+    }
+
+    i {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        font-size: 1.5rem;
+        color: #261717;
+        cursor: pointer;
+        opacity: 1;
+    }
+}
+
+.save-notes {
+padding: 14px 24px;
+width: 180px;
+background-color: #268CF2;
+color: #fff;
+border-radius: 4px;
+
+    &:hover {
+        background-color: #074686;
+        transition: background-color 0.25s ease-in-out;
+    }
+}
+
+.cancel-notes {
+    padding: 14px 24px;
+    width: 180px;
+    background-color: #fff;
+    border: 1px solid #268CF2;
+    color: #268CF2;
+    border-radius: 4px;
+    
+        &:hover {
+            background-color: #ebf0f6;
+            transition: background-color 0.25s ease-in-out;
+        }
+    }
+
+

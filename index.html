@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Ashedzi Solomon">
+        <meta name="description" content="cool shape and color selctor game">
+        <meta name="keywords" content="web development, html, css, javascript, winnipeg, canada">
+        <title>Shape factory</title>
+        <link rel="icon" href="" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+        <script src="./assets/js/app.js" defer></script>
+        <link rel="stylesheet" href="./assets/css/main.css" media="all" >
+    </head>
+    <body>
+        <main>
+            <section class="container flex">
+                <div class="left-side flex column space-between center">
+                    <div class="flex column gap-20">
+                        <figure>
+                            <img src="./assets/img/logo.png">
+                        </figure>
+                        <h3>Notes app</h3>
+                    </div>
+                    <div>
+                        <h4>Hey Ashe,</h4>
+                        <p class="notes-number">You have 0 notes saved</p>
+                    </div>
+                </div>
+                <div class="middle-side">
+                    <button type="button" class="add-notes"><i class="fa-solid fa-plus"></i> Add Note</button>
+                    <ul class="notes-container">
+                        <!-- <li class="first-note">
+                            <h3 class="note-title">Note title</h3>
+                            <p class="note-description">i am so tired</p>
+                            <p class="note-time">3rd feb</p>
+                            <i class="fa-solid fa-trash"></i>
+                        </li> -->
+                    </ul>
+                </div>
+                <form class="flex column gap-20">
+                    <input type="text" class="title" placeholder="Title"></input>
+                    <textarea placeholder="Start writing here..." class="description"></textarea>
+                    <div class="flex gap-20 end">
+                        <button type="button" class="cancel-notes">Cancel</button>
+                        <button type="button" class="save-notes">Save</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
