@@ -8,6 +8,7 @@
 body {
     font-family: "Open Sans", "Lato", Arial, sans-serif;
     text-align: center;
+    background-color: #fff;
 }
 
 .flex {
@@ -197,30 +198,31 @@ textarea {
 }
 
 .save-notes {
-padding: 14px 24px;
-width: 180px;
-background-color: #268CF2;
-color: #fff;
-border-radius: 4px;
+    background-color: #268CF2;
+    color: #fff;
+    border-radius: 4px;
 
-    &:hover {
-        background-color: #074686;
-        transition: background-color 0.25s ease-in-out;
-    }
+        &:hover {
+            background-color: #074686;
+            transition: background-color 0.25s ease-in-out;
+        }
+}
+
+.save-notes, .cancel-notes {
+    padding-block: 12px;
+    width: 120px;
+    border-radius: 4px;
 }
 
 .cancel-notes {
-    padding: 14px 24px;
-    width: 180px;
     background-color: #fff;
     border: 1px solid #268CF2;
     color: #268CF2;
-    border-radius: 4px;
     
-        &:hover {
-            background-color: #ebf0f6;
-            transition: background-color 0.25s ease-in-out;
-        }
+    &:hover {
+        background-color: #ebf0f6;
+        transition: background-color 0.25s ease-in-out;
     }
+}
 
 

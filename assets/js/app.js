@@ -50,11 +50,11 @@ function createList() {
 
     const notesTitle = document.createElement('h3');
     notesTitle.setAttribute('class', 'note-title');
-    notesTitle.textContent = title.value;
+    notesTitle.textContent = truncateText(title.value, 30);
 
     const notesDescription = document.createElement('p');
     notesDescription.setAttribute('class', 'note-description');
-    notesDescription.textContent = truncateText(description.value, 45);
+    notesDescription.textContent = truncateText(description.value, 40);
 
     const notesTime = document.createElement('p');
     notesTime.setAttribute('class', 'note-time');
@@ -63,28 +63,31 @@ function createList() {
     const deleteIcon = document.createElement('i');
     deleteIcon.setAttribute('class', 'fa-solid fa-trash');
     deleteIcon.addEventListener('click', () => deleteNotes(deleteIcon));
-
     notesContainer.append(notesPreview);
     notesPreview.append(notesTitle, notesDescription, notesTime, deleteIcon);
 
+    newList();
+
+    clearNote();
+
+    numberOfNotes.textContent = printNotesNumber();
+    notesPreview.addEventListener('click', noteClick )
+}
+
+function newList() {
     const note = new Note(title.value, description.value, new Date().toDateString());
     notes.push(note);
     count++
+}
 
-    title.value = '';
-    description.value = '';
-
-    numberOfNotes.textContent = printNotesNumber();
-    
-    notesPreview.addEventListener('click', function () {        
-        if (lastFocusedNote) {
-            lastFocusedNote.classList.remove('focused-note');
-        }
-        this.classList.add('focused-note');
-        lastFocusedNote = this;
-        const index = parseInt(this.getAttribute('data-index'), 10);
-        openNoteForEditing(index);  
-    });
+function noteClick() {
+    if (lastFocusedNote) {
+        lastFocusedNote.classList.remove('focused-note');
+    }
+    this.classList.add('focused-note');
+    lastFocusedNote = this;
+    const index = parseInt(this.getAttribute('data-index'), 10);
+    openNoteForEditing(index);  
 }
 
 function validateNote() {
@@ -98,11 +101,14 @@ function truncateText(text, maxlength) {
     return text.length > maxlength ? text.substring(0, maxlength) + '...' : text;
 }
 
-
 function printNotesNumber() {
     return `You have ${notes.length} notes saved`;
 }
 
+function clearNote() {
+    title.value = '';
+    description.value = '';
+}
 
 saveNote.addEventListener('click', () => {
     if(!validateNote()) {
@@ -133,15 +139,9 @@ function saveOrUpdateNote() {
 }
 
 addNote.addEventListener('click', () => {
-    title.value = '';
-    description.value = '';
-});
-
-cancelNote.addEventListener('click', () => {
-    if (formorm) {
-        appBody.removeChild(formorm); 
-    }
-});
+    clearNote();
+    removeHighlight();
+})
 
 function deleteNotes(element) {
     //i got some help from chatgpt here with the 'closest' element which is used 
@@ -157,7 +157,19 @@ function deleteNotes(element) {
     allNotes.forEach((note, i) => {
         note.setAttribute('data-index', i);
     });
+    clearNote();
 }
+
+function removeHighlight() {
+    const notesContainer = document.querySelector('.notes-container');
+    const allNotes = notesContainer.querySelectorAll('li');
+    allNotes.forEach((note) => {
+        note.classList.remove('focused-note');
+    })
+
+    lastFocusedNote = null;
+}
+
 
 
 
